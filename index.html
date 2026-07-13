@@ -3,83 +3,351 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Huey Loop</title>
 
     <style>
-        body{
-            margin:0;
-            font-family:Arial, Helvetica, sans-serif;
-            background:#111;
-            color:white;
-            text-align:center;
+        * {
+            box-sizing: border-box;
         }
 
-        .hero{
-            padding:100px 20px;
+        html {
+            scroll-behavior: smooth;
         }
 
-        h1{
-            font-size:60px;
-            margin-bottom:10px;
-            color:#d4af37;
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: #111611;
+            color: white;
+            line-height: 1.6;
         }
 
-        h2{
-            font-weight:normal;
-            color:#ddd;
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 6%;
+            background: rgba(17, 22, 17, 0.96);
+            border-bottom: 1px solid #384038;
         }
 
-        p{
-            max-width:700px;
-            margin:auto;
-            line-height:1.8;
-            font-size:20px;
+        .brand {
+            font-size: 22px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            color: #d5b35b;
         }
 
-        .button{
-            display:inline-block;
-            margin-top:40px;
-            padding:18px 35px;
-            background:#d4af37;
-            color:black;
-            text-decoration:none;
-            border-radius:8px;
-            font-weight:bold;
-            font-size:18px;
+        nav {
+            display: flex;
+            gap: 18px;
+            flex-wrap: wrap;
+            justify-content: flex-end;
         }
 
-        footer{
-            margin-top:120px;
-            color:#888;
-            padding-bottom:40px;
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #d5b35b;
+        }
+
+        .hero {
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 70px 24px;
+            background:
+                linear-gradient(rgba(10, 13, 10, 0.72), rgba(10, 13, 10, 0.93)),
+                radial-gradient(circle at center, #4a5542, #111611 72%);
+        }
+
+        .hero-content {
+            max-width: 850px;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: clamp(48px, 10vw, 88px);
+            letter-spacing: 6px;
+            color: #d5b35b;
+        }
+
+        .tagline {
+            margin: 16px 0;
+            font-size: clamp(18px, 4vw, 28px);
+            font-weight: bold;
+        }
+
+        .hero p {
+            max-width: 700px;
+            margin: 22px auto;
+            font-size: 18px;
+            color: #d7ddd5;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 14px;
+            margin-top: 30px;
+        }
+
+        .button {
+            display: inline-block;
+            min-width: 150px;
+            padding: 14px 22px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .button-primary {
+            background: #d5b35b;
+            color: #111611;
+        }
+
+        .button-secondary {
+            border: 2px solid #d5b35b;
+            color: white;
+        }
+
+        section {
+            padding: 70px 7%;
+        }
+
+        .section-heading {
+            text-align: center;
+            max-width: 750px;
+            margin: 0 auto 40px;
+        }
+
+        .section-heading h2 {
+            margin-bottom: 8px;
+            font-size: 36px;
+            color: #d5b35b;
+        }
+
+        .section-heading p {
+            color: #c7cec4;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 24px;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .card {
+            background: #1a211a;
+            border: 1px solid #394239;
+            border-radius: 8px;
+            padding: 30px 24px;
+            text-align: center;
+        }
+
+        .card h3 {
+            margin-top: 0;
+            color: #d5b35b;
+        }
+
+        .coming-soon {
+            display: inline-block;
+            margin-top: 12px;
+            padding: 7px 12px;
+            border-radius: 4px;
+            background: #313a30;
+            color: #dce1d9;
+            font-size: 12px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .about {
+            background: #171c17;
+            text-align: center;
+        }
+
+        .about-content {
+            max-width: 800px;
+            margin: auto;
+        }
+
+        footer {
+            padding: 35px 20px;
+            text-align: center;
+            background: #0b0e0b;
+            color: #aeb6ac;
+            border-top: 1px solid #394239;
+        }
+
+        @media (max-width: 760px) {
+            header {
+                flex-direction: column;
+                gap: 14px;
+            }
+
+            nav {
+                justify-content: center;
+                gap: 14px;
+            }
+
+            section {
+                padding: 55px 22px;
+            }
         }
     </style>
-
 </head>
 
 <body>
 
-<div class="hero">
+<header>
+    <div class="brand">HUEY LOOP</div>
 
-<h1>HUEY LOOP</h1>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#shop">Shop</a>
+        <a href="#videos">Videos</a>
+        <a href="#podcast">Podcast</a>
+        <a href="#stories">Stories</a>
+        <a href="#about">About</a>
+    </nav>
+</header>
 
-<h2>Military Aviation • Heritage • Stories</h2>
+<main>
 
-<p>
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>HUEY LOOP</h1>
 
-Building a community around military aviation, timeless stories,
-and apparel inspired by those who served.
+            <div class="tagline">
+                Military Aviation • Heritage • Stories
+            </div>
 
-</p>
+            <p>
+                Huey Loop is building a home for original military aviation apparel,
+                honest conversations, family history and stories worth preserving.
+            </p>
 
-<a class="button" href="#">COMING SOON</a>
+            <div class="buttons">
+                <a class="button button-primary" href="#shop">Shop Coming Soon</a>
+                <a class="button button-secondary" href="#videos">Watch Stories</a>
+            </div>
+        </div>
+    </section>
 
-</div>
+    <section id="shop">
+        <div class="section-heading">
+            <h2>Huey Loop Apparel</h2>
+            <p>
+                Original designs inspired by maintainers, crew chiefs, aircrews
+                and the people who keep aviation moving.
+            </p>
+        </div>
+
+        <div class="cards">
+            <div class="card">
+                <h3>First Shirt Design</h3>
+                <p>Your first Huey Loop shirt will appear here.</p>
+                <span class="coming-soon">COMING SOON</span>
+            </div>
+
+            <div class="card">
+                <h3>Second Shirt Design</h3>
+                <p>Your second Huey Loop shirt will appear here.</p>
+                <span class="coming-soon">COMING SOON</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="videos">
+        <div class="section-heading">
+            <h2>Videos and Interviews</h2>
+            <p>
+                Veteran interviews, family conversations, military stories
+                and lessons worth passing forward.
+            </p>
+        </div>
+
+        <div class="cards">
+            <div class="card">
+                <h3>Video Library</h3>
+                <p>Future YouTube videos will appear here.</p>
+                <span class="coming-soon">COMING SOON</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="podcast">
+        <div class="section-heading">
+            <h2>Podcast</h2>
+            <p>
+                Conversations about service, aviation, leadership, family and legacy.
+            </p>
+        </div>
+
+        <div class="cards">
+            <div class="card">
+                <h3>Podcast Launching Soon</h3>
+                <p>Future podcast episodes will be available here.</p>
+                <span class="coming-soon">COMING SOON</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="stories">
+        <div class="section-heading">
+            <h2>Stories</h2>
+            <p>
+                Preserving the experiences, humor and lessons behind the mission.
+            </p>
+        </div>
+
+        <div class="cards">
+            <div class="card">
+                <h3>Military Aviation</h3>
+                <p>Stories from maintainers, crew chiefs, aircrews and leaders.</p>
+            </div>
+
+            <div class="card">
+                <h3>Family Legacy</h3>
+                <p>Memories and interviews preserved for future generations.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <div class="about-content">
+            <div class="section-heading">
+                <h2>About Huey Loop</h2>
+            </div>
+
+            <p>
+                Huey Loop was created to celebrate military aviation culture,
+                share original apparel and preserve stories that might otherwise
+                be lost. The site is still under construction, but the mission
+                has already started.
+            </p>
+        </div>
+    </section>
+
+</main>
 
 <footer>
-
-© 2026 Huey Loop
-
+    © 2026 Huey Loop. All rights reserved.
 </footer>
 
 </body>
