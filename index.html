@@ -2,11 +2,31 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Huey Loop</title>
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Huey Loop preserves stories, honors lives, and helps build legacies for future generations."
+    >
+
+    <title>Huey Loop | Preserving Stories and Building Legacies</title>
 
     <style>
+        :root {
+            --black: #0b0c0b;
+            --charcoal: #141714;
+            --card: #1c201c;
+            --gold: #d3ad52;
+            --gold-light: #e6c777;
+            --cream: #f2eee3;
+            --gray: #b8beb5;
+            --border: #383e36;
+        }
+
         * {
             box-sizing: border-box;
         }
@@ -17,196 +37,363 @@
 
         body {
             margin: 0;
-            font-family: Arial, Helvetica, sans-serif;
-            background: #111611;
-            color: white;
-            line-height: 1.6;
+            font-family: Georgia, "Times New Roman", serif;
+            background: var(--black);
+            color: var(--cream);
+            line-height: 1.7;
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+        a {
+            color: inherit;
         }
 
         header {
             position: sticky;
             top: 0;
             z-index: 1000;
+
             display: flex;
-            justify-content: space-between;
             align-items: center;
-            padding: 18px 6%;
-            background: rgba(17, 22, 17, 0.96);
-            border-bottom: 1px solid #384038;
+            justify-content: space-between;
+            gap: 25px;
+
+            padding: 14px 6%;
+            background: rgba(11, 12, 11, 0.96);
+            border-bottom: 1px solid var(--border);
         }
 
         .brand {
+            color: var(--gold);
+            font-family: Arial, Helvetica, sans-serif;
             font-size: 22px;
-            font-weight: bold;
-            letter-spacing: 2px;
-            color: #d5b35b;
+            font-weight: 800;
+            letter-spacing: 3px;
+            text-decoration: none;
         }
 
         nav {
             display: flex;
-            gap: 18px;
-            flex-wrap: wrap;
             justify-content: flex-end;
+            flex-wrap: wrap;
+            gap: 18px;
         }
 
         nav a {
-            color: white;
+            color: var(--cream);
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 1px;
             text-decoration: none;
-            font-size: 14px;
-            font-weight: bold;
+            text-transform: uppercase;
         }
 
         nav a:hover {
-            color: #d5b35b;
+            color: var(--gold-light);
         }
 
         .hero {
-            min-height: 80vh;
+            min-height: 88vh;
             display: flex;
             align-items: center;
             justify-content: center;
+
+            padding: 90px 24px;
             text-align: center;
-            padding: 70px 24px;
+
             background:
-                linear-gradient(rgba(10, 13, 10, 0.72), rgba(10, 13, 10, 0.93)),
-                radial-gradient(circle at center, #4a5542, #111611 72%);
+                linear-gradient(
+                    rgba(5, 6, 5, 0.68),
+                    rgba(5, 6, 5, 0.96)
+                ),
+                radial-gradient(
+                    circle at center,
+                    #3c4338,
+                    var(--black) 70%
+                );
         }
 
         .hero-content {
-            max-width: 850px;
+            max-width: 950px;
         }
 
-        h1 {
+        .hero h1 {
             margin: 0;
-            font-size: clamp(48px, 10vw, 88px);
-            letter-spacing: 6px;
-            color: #d5b35b;
+            color: var(--gold);
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: clamp(54px, 11vw, 105px);
+            letter-spacing: 8px;
+            line-height: 1;
         }
 
-        .tagline {
-            margin: 16px 0;
-            font-size: clamp(18px, 4vw, 28px);
-            font-weight: bold;
+        .hero h2 {
+            margin: 24px auto 10px;
+            max-width: 850px;
+            font-size: clamp(24px, 5vw, 42px);
+            line-height: 1.25;
         }
 
-        .hero p {
-            max-width: 700px;
-            margin: 22px auto;
+        .hero-subtitle {
+            color: var(--gold-light);
             font-size: 18px;
-            color: #d7ddd5;
+            font-style: italic;
         }
 
-        .buttons {
+        .hero-description {
+            max-width: 720px;
+            margin: 25px auto 0;
+            color: #d7dbd4;
+            font-size: 18px;
+        }
+
+        .button-row {
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
             gap: 14px;
-            margin-top: 30px;
+            margin-top: 35px;
         }
 
         .button {
             display: inline-block;
-            min-width: 150px;
+            min-width: 175px;
             padding: 14px 22px;
-            border-radius: 5px;
+            border-radius: 4px;
+
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: 800;
+            letter-spacing: 1px;
             text-decoration: none;
-            font-weight: bold;
+            text-transform: uppercase;
         }
 
         .button-primary {
-            background: #d5b35b;
-            color: #111611;
+            background: var(--gold);
+            color: var(--black);
         }
 
         .button-secondary {
-            border: 2px solid #d5b35b;
-            color: white;
+            border: 2px solid var(--gold);
+            color: var(--cream);
+        }
+
+        .button:hover {
+            transform: translateY(-2px);
         }
 
         section {
-            padding: 70px 7%;
+            padding: 85px 7%;
+        }
+
+        .dark-section {
+            background: var(--charcoal);
+        }
+
+        .section-content {
+            max-width: 1000px;
+            margin: auto;
         }
 
         .section-heading {
+            max-width: 800px;
+            margin: 0 auto 42px;
             text-align: center;
-            max-width: 750px;
-            margin: 0 auto 40px;
         }
 
-        .section-heading h2 {
+        .eyebrow {
+            display: block;
             margin-bottom: 8px;
-            font-size: 36px;
-            color: #d5b35b;
+            color: var(--gold-light);
+
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 3px;
+            text-transform: uppercase;
         }
 
-        .section-heading p {
-            color: #c7cec4;
+        h2 {
+            margin: 0 0 15px;
+            color: var(--gold);
+            font-size: clamp(34px, 6vw, 52px);
+            line-height: 1.2;
+        }
+
+        h3 {
+            color: var(--gold-light);
+            font-size: 25px;
+        }
+
+        p {
+            color: #d5d9d2;
+            font-size: 18px;
+        }
+
+        .story-opening {
+            max-width: 850px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .story-opening strong {
+            color: var(--cream);
+        }
+
+        .story-highlight {
+            margin: 45px auto 0;
+            padding: 28px;
+            max-width: 760px;
+
+            border-left: 4px solid var(--gold);
+            background: #171a17;
+
+            color: var(--cream);
+            font-size: 22px;
+            font-style: italic;
         }
 
         .cards {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            grid-template-columns:
+                repeat(auto-fit, minmax(225px, 1fr));
             gap: 24px;
-            max-width: 1100px;
+
+            max-width: 1150px;
             margin: auto;
         }
 
         .card {
-            background: #1a211a;
-            border: 1px solid #394239;
-            border-radius: 8px;
-            padding: 30px 24px;
-            text-align: center;
+            padding: 32px 26px;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 7px;
         }
 
         .card h3 {
             margin-top: 0;
-            color: #d5b35b;
         }
 
-        .coming-soon {
+        .card p {
+            margin-bottom: 0;
+            font-size: 16px;
+        }
+
+        .faith-verse {
+            max-width: 760px;
+            margin: 35px auto 0;
+            padding: 28px;
+
+            border-top: 1px solid var(--gold);
+            border-bottom: 1px solid var(--gold);
+
+            text-align: center;
+            font-size: 20px;
+            font-style: italic;
+        }
+
+        .feature-card {
+            text-align: center;
+        }
+
+        .feature-label {
             display: inline-block;
-            margin-top: 12px;
+            margin-top: 14px;
             padding: 7px 12px;
+
+            background: #30362d;
             border-radius: 4px;
-            background: #313a30;
-            color: #dce1d9;
-            font-size: 12px;
-            font-weight: bold;
+
+            color: var(--gray);
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 11px;
+            font-weight: 800;
             letter-spacing: 1px;
         }
 
-        .about {
-            background: #171c17;
+        .promise {
             text-align: center;
         }
 
-        .about-content {
+        .promise strong {
+            color: var(--gold-light);
+        }
+
+        .disclaimer {
+            max-width: 850px;
+            margin: 30px auto 0;
+            padding: 22px;
+
+            background: #101210;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+
+            color: var(--gray);
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 14px;
+        }
+
+        .welcome {
+            text-align: center;
+        }
+
+        .welcome-lines {
             max-width: 800px;
             margin: auto;
+            font-size: 21px;
         }
 
         footer {
-            padding: 35px 20px;
+            padding: 45px 20px;
+            background: #070807;
+            border-top: 1px solid var(--border);
             text-align: center;
-            background: #0b0e0b;
-            color: #aeb6ac;
-            border-top: 1px solid #394239;
         }
 
-        @media (max-width: 760px) {
+        .footer-values {
+            margin-bottom: 15px;
+            color: var(--gold);
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 13px;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .footer-copy {
+            color: #92998f;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 13px;
+        }
+
+        @media (max-width: 800px) {
             header {
                 flex-direction: column;
-                gap: 14px;
+                padding: 14px 20px;
             }
 
             nav {
                 justify-content: center;
-                gap: 14px;
+                gap: 13px;
+            }
+
+            nav a {
+                font-size: 11px;
             }
 
             section {
-                padding: 55px 22px;
+                padding: 65px 22px;
+            }
+
+            .hero {
+                min-height: 78vh;
+            }
+
+            .story-highlight {
+                font-size: 19px;
             }
         }
     </style>
@@ -215,15 +402,16 @@
 <body>
 
 <header>
-    <div class="brand">HUEY LOOP</div>
+    <a class="brand" href="#home">HUEY LOOP</a>
 
     <nav>
         <a href="#home">Home</a>
-        <a href="#shop">Shop</a>
-        <a href="#videos">Videos</a>
-        <a href="#podcast">Podcast</a>
+        <a href="#story">Our Story</a>
+        <a href="#foundation">Foundation</a>
         <a href="#stories">Stories</a>
-        <a href="#about">About</a>
+        <a href="#podcast">Podcast</a>
+        <a href="#apparel">Apparel</a>
+        <a href="#promise">Our Promise</a>
     </nav>
 </header>
 
@@ -231,123 +419,445 @@
 
     <section class="hero" id="home">
         <div class="hero-content">
+
             <h1>HUEY LOOP</h1>
 
-            <div class="tagline">
-                Military Aviation • Heritage • Stories
+            <h2>
+                Preserving Stories. Honoring Lives.
+                Building Legacies.
+            </h2>
+
+            <div class="hero-subtitle">
+                Inspired by a real place called Huey Loop.
             </div>
 
-            <p>
-                Huey Loop is building a home for original military aviation apparel,
-                honest conversations, family history and stories worth preserving.
+            <p class="hero-description">
+                Huey Loop is a Christian, military family-owned
+                business dedicated to preserving the voices,
+                experiences, faith, wisdom and legacy of the people
+                who shape our lives.
             </p>
 
-            <div class="buttons">
-                <a class="button button-primary" href="#shop">Shop Coming Soon</a>
-                <a class="button button-secondary" href="#videos">Watch Stories</a>
+            <div class="button-row">
+                <a class="button button-primary" href="#story">
+                    Discover Our Story
+                </a>
+
+                <a class="button button-secondary" href="#stories">
+                    Explore Stories
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="story">
+        <div class="section-content">
+
+            <div class="section-heading">
+                <span class="eyebrow">Where It Began</span>
+                <h2>Our Story</h2>
+            </div>
+
+            <div class="story-opening">
+
+                <p>
+                    <strong>Huey Loop is more than a name.
+                    It is a real place.</strong>
+                </p>
+
+                <p>
+                    In 2006, I walked into an old Army hangar on
+                    Huey Loop at Simmons Army Airfield and began my
+                    journey in military aviation. At the time, I
+                    thought I was simply beginning a career.
+                    Looking back, I believe God was beginning a much
+                    greater story.
+                </p>
+
+                <p>
+                    Over the years, I served alongside remarkable
+                    people. Together we experienced hardship,
+                    sacrifice, laughter, friendship and moments that
+                    shaped our lives in ways we could not fully
+                    appreciate at the time.
+                </p>
+
+                <p>
+                    Years later, after deployments, leadership
+                    opportunities, successes, failures and countless
+                    lessons, I found myself standing once again where
+                    it all began.
+                </p>
+
+                <p><strong>Back on Huey Loop.</strong></p>
+
+                <p>
+                    Standing there, I realized something that has
+                    never left me. The buildings were never what made
+                    that place special.
+                </p>
+
+                <p><strong>The people did.</strong></p>
+
+                <p>
+                    The conversations. The friendships. The mentors.
+                    The families. The sacrifices. The faith. The
+                    memories. The stories.
+                </p>
+
+                <p>
+                    That realization became the foundation of
+                    Huey Loop.
+                </p>
+
+                <div class="story-highlight">
+                    Places may begin our stories, but people give
+                    them meaning.
+                </div>
+
             </div>
         </div>
     </section>
 
-    <section id="shop">
-        <div class="section-heading">
-            <h2>Huey Loop Apparel</h2>
-            <p>
-                Original designs inspired by maintainers, crew chiefs, aircrews
-                and the people who keep aviation moving.
-            </p>
-        </div>
+    <section class="dark-section" id="mission">
+        <div class="section-content">
 
-        <div class="cards">
-            <div class="card">
-                <h3>First Shirt Design</h3>
-                <p>Your first Huey Loop shirt will appear here.</p>
-                <span class="coming-soon">COMING SOON</span>
+            <div class="section-heading">
+                <span class="eyebrow">Why We Exist</span>
+                <h2>Our Mission</h2>
+
+                <p>
+                    To preserve the stories, voices, wisdom, humor,
+                    faith and legacy of the people who shape our
+                    lives.
+                </p>
+
+                <p>
+                    Through meaningful conversations, videos,
+                    podcasts, writing and original apparel, we strive
+                    to ensure those stories continue to inspire
+                    generations to come.
+                </p>
             </div>
 
-            <div class="card">
-                <h3>Second Shirt Design</h3>
-                <p>Your second Huey Loop shirt will appear here.</p>
-                <span class="coming-soon">COMING SOON</span>
-            </div>
         </div>
     </section>
 
-    <section id="videos">
-        <div class="section-heading">
-            <h2>Videos and Interviews</h2>
-            <p>
-                Veteran interviews, family conversations, military stories
-                and lessons worth passing forward.
-            </p>
-        </div>
+    <section id="foundation">
+        <div class="section-content">
 
-        <div class="cards">
-            <div class="card">
-                <h3>Video Library</h3>
-                <p>Future YouTube videos will appear here.</p>
-                <span class="coming-soon">COMING SOON</span>
+            <div class="section-heading">
+                <span class="eyebrow">What Guides Us</span>
+                <h2>Our Foundation</h2>
             </div>
+
+            <div class="cards">
+
+                <article class="card">
+                    <h3>Faith</h3>
+
+                    <p>
+                        Our Christian faith is the foundation of
+                        Huey Loop. It shapes how we treat people,
+                        conduct business and pursue excellence.
+                    </p>
+
+                    <p>
+                        We believe every person is created by God
+                        with dignity, purpose and immeasurable worth.
+                    </p>
+                </article>
+
+                <article class="card">
+                    <h3>Family</h3>
+
+                    <p>
+                        The voices of those we love are among our
+                        greatest treasures.
+                    </p>
+
+                    <p>
+                        We believe preserving family stories is one
+                        of the greatest acts of love we can offer
+                        future generations.
+                    </p>
+                </article>
+
+                <article class="card">
+                    <h3>Service</h3>
+
+                    <p>
+                        Service takes many forms. It is found in
+                        homes, churches, classrooms, hospitals,
+                        workshops, communities and countless other
+                        places.
+                    </p>
+
+                    <p>
+                        Every life devoted to serving others deserves
+                        to be remembered.
+                    </p>
+                </article>
+
+                <article class="card">
+                    <h3>Legacy</h3>
+
+                    <p>
+                        Legacy is not measured only by titles,
+                        possessions or accomplishments.
+                    </p>
+
+                    <p>
+                        It is measured by faith shared, people loved,
+                        lives changed and stories remembered.
+                    </p>
+                </article>
+
+            </div>
+
+            <div class="faith-verse">
+                “Whatever you do, work heartily, as for the Lord
+                and not for men.”
+                <br>
+                <strong>Colossians 3:23</strong>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="dark-section" id="stories">
+        <div class="section-content">
+
+            <div class="section-heading">
+                <span class="eyebrow">Voices Worth Preserving</span>
+                <h2>Stories</h2>
+
+                <p>
+                    Real conversations that preserve memories,
+                    wisdom, humor, faith and lessons for generations
+                    to come.
+                </p>
+            </div>
+
+            <div class="cards">
+
+                <article class="card feature-card">
+                    <h3>Friends and Mentors</h3>
+
+                    <p>
+                        Preserving the stories of the people whose
+                        friendship, leadership and wisdom shaped our
+                        lives.
+                    </p>
+
+                    <span class="feature-label">COMING SOON</span>
+                </article>
+
+                <article class="card feature-card">
+                    <h3>Family Legacy</h3>
+
+                    <p>
+                        Capturing voices, memories and experiences
+                        that families can carry forward.
+                    </p>
+
+                    <span class="feature-label">COMING SOON</span>
+                </article>
+
+                <article class="card feature-card">
+                    <h3>Lives of Service</h3>
+
+                    <p>
+                        Honoring everyday people whose service,
+                        sacrifice and character made a lasting
+                        difference.
+                    </p>
+
+                    <span class="feature-label">COMING SOON</span>
+                </article>
+
+            </div>
+
         </div>
     </section>
 
     <section id="podcast">
-        <div class="section-heading">
-            <h2>Podcast</h2>
-            <p>
-                Conversations about service, aviation, leadership, family and legacy.
-            </p>
-        </div>
+        <div class="section-content">
 
-        <div class="cards">
-            <div class="card">
-                <h3>Podcast Launching Soon</h3>
-                <p>Future podcast episodes will be available here.</p>
-                <span class="coming-soon">COMING SOON</span>
-            </div>
-        </div>
-    </section>
-
-    <section id="stories">
-        <div class="section-heading">
-            <h2>Stories</h2>
-            <p>
-                Preserving the experiences, humor and lessons behind the mission.
-            </p>
-        </div>
-
-        <div class="cards">
-            <div class="card">
-                <h3>Military Aviation</h3>
-                <p>Stories from maintainers, crew chiefs, aircrews and leaders.</p>
-            </div>
-
-            <div class="card">
-                <h3>Family Legacy</h3>
-                <p>Memories and interviews preserved for future generations.</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="about" id="about">
-        <div class="about-content">
             <div class="section-heading">
-                <h2>About Huey Loop</h2>
+                <span class="eyebrow">Honest Conversations</span>
+                <h2>Podcast and Videos</h2>
+
+                <p>
+                    Conversations about faith, family, leadership,
+                    service, hardship, redemption, purpose and the
+                    stories that connect generations.
+                </p>
+            </div>
+
+            <div class="cards">
+
+                <article class="card feature-card">
+                    <h3>Huey Loop Podcast</h3>
+
+                    <p>
+                        Future episodes will be available directly
+                        from Huey Loop.
+                    </p>
+
+                    <span class="feature-label">COMING SOON</span>
+                </article>
+
+                <article class="card feature-card">
+                    <h3>Video Interviews</h3>
+
+                    <p>
+                        Personal interviews preserving the voices
+                        and stories of friends, family and loved
+                        ones.
+                    </p>
+
+                    <span class="feature-label">COMING SOON</span>
+                </article>
+
+            </div>
+
+        </div>
+    </section>
+
+    <section class="dark-section" id="apparel">
+        <div class="section-content">
+
+            <div class="section-heading">
+                <span class="eyebrow">Supporting the Mission</span>
+                <h2>Huey Loop Apparel</h2>
+
+                <p>
+                    Original apparel inspired by meaningful stories,
+                    craftsmanship, aviation culture and the people
+                    behind the designs.
+                </p>
+
+                <p>
+                    Every purchase helps support the mission of
+                    preserving stories and building lasting
+                    legacies.
+                </p>
+            </div>
+
+            <div class="cards">
+
+                <article class="card feature-card">
+                    <h3>Featured Shirt One</h3>
+
+                    <p>
+                        Your first Huey Loop design will be displayed
+                        here.
+                    </p>
+
+                    <span class="feature-label">COMING SOON</span>
+                </article>
+
+                <article class="card feature-card">
+                    <h3>Featured Shirt Two</h3>
+
+                    <p>
+                        Your second Huey Loop design will be displayed
+                        here.
+                    </p>
+
+                    <span class="feature-label">COMING SOON</span>
+                </article>
+
+            </div>
+
+        </div>
+    </section>
+
+    <section id="promise">
+        <div class="section-content promise">
+
+            <div class="section-heading">
+                <span class="eyebrow">Independent and Family Owned</span>
+                <h2>Our Promise</h2>
             </div>
 
             <p>
-                Huey Loop was created to celebrate military aviation culture,
-                share original apparel and preserve stories that might otherwise
-                be lost. The site is still under construction, but the mission
-                has already started.
+                Huey Loop is a
+                <strong>
+                    Christian, military family-owned business
+                </strong>
+                built on faith, integrity and a commitment to
+                preserving stories that matter.
             </p>
+
+            <p>
+                While our family's journey has been deeply influenced
+                by military service, Huey Loop exists to preserve the
+                stories of people from every walk of life.
+            </p>
+
+            <p>
+                Our mission is simple: preserve stories, honor lives
+                and help build legacies that endure for generations.
+            </p>
+
+            <div class="disclaimer">
+                Huey Loop is an independent business. It is not
+                affiliated with or endorsed by the United States
+                Army, the United States Department of Defense or any
+                government agency. Any views expressed through Huey
+                Loop are personal and do not represent the official
+                positions of the United States government.
+            </div>
+
+        </div>
+    </section>
+
+    <section class="dark-section welcome">
+        <div class="section-content">
+
+            <div class="section-heading">
+                <span class="eyebrow">You Are Welcome Here</span>
+                <h2>Welcome to Huey Loop</h2>
+            </div>
+
+            <div class="welcome-lines">
+
+                <p>
+                    May we never forget the people who shaped us.
+                </p>
+
+                <p>
+                    May we preserve their voices while we still can.
+                </p>
+
+                <p>
+                    May our stories strengthen the generations that
+                    follow.
+                </p>
+
+                <p>
+                    <strong>Welcome to Huey Loop.</strong>
+                </p>
+
+            </div>
         </div>
     </section>
 
 </main>
 
 <footer>
-    © 2026 Huey Loop. All rights reserved.
+
+    <div class="footer-values">
+        Founded on Faith • Built for Families • Dedicated to Legacy
+    </div>
+
+    <div class="footer-copy">
+        © 2026 Huey Loop. All rights reserved.
+    </div>
+
 </footer>
 
 </body>
