@@ -15,25 +15,31 @@
 
     <title>Huey Loop | Every Story Deserves to Be Remembered</title>
 
-    <link rel="icon" type="image/png" href="hueyloop-logo.png">
-    <link rel="apple-touch-icon" href="hueyloop-logo.png">
+    <link
+        rel="icon"
+        type="image/png"
+        href="hueyloop-logo-new.png"
+    >
+
+    <link
+        rel="apple-touch-icon"
+        href="hueyloop-logo-new.png"
+    >
 
     <style>
         :root {
-            --black: #050606;
-            --metal-dark: #0c0f10;
-            --metal-mid: #1b2022;
-            --metal-light: #343b3f;
-            --panel: rgba(12, 15, 16, 0.94);
-            --panel-light: rgba(24, 29, 31, 0.94);
-            --gold: #c7a45a;
-            --gold-light: #e0c684;
-            --cream: #f2eee5;
-            --soft-white: #d7dbda;
-            --gray: #9ea5a6;
-            --line: rgba(224, 198, 132, 0.28);
-            --metal-line: rgba(255, 255, 255, 0.12);
-            --shadow: 0 24px 60px rgba(0, 0, 0, 0.55);
+            --black: #080908;
+            --charcoal: #111411;
+            --charcoal-light: #181d18;
+            --card: #1d221d;
+            --card-hover: #242a23;
+            --gold: #c9a653;
+            --gold-light: #e3c97e;
+            --cream: #f2ede1;
+            --soft-white: #dedfd9;
+            --gray: #aeb4aa;
+            --border: rgba(201, 166, 83, 0.25);
+            --shadow: 0 18px 45px rgba(0, 0, 0, 0.35);
         }
 
         * {
@@ -46,10 +52,9 @@
 
         body {
             margin: 0;
-            overflow-x: hidden;
             background: var(--black);
             color: var(--cream);
-            font-family: Arial, Helvetica, sans-serif;
+            font-family: Georgia, "Times New Roman", serif;
             line-height: 1.7;
         }
 
@@ -78,6 +83,7 @@
             padding: 12px 18px;
             background: var(--gold);
             color: var(--black);
+            font-family: Arial, Helvetica, sans-serif;
             font-weight: 800;
             text-decoration: none;
         }
@@ -86,87 +92,6 @@
             top: 15px;
         }
 
-        /*
-        -------------------------------------------------
-        GLOBAL METAL BACKGROUND
-        -------------------------------------------------
-        */
-
-        body::before {
-            position: fixed;
-            inset: 0;
-            z-index: -3;
-            background:
-                radial-gradient(
-                    circle at 20% 10%,
-                    rgba(255, 255, 255, 0.16),
-                    transparent 24%
-                ),
-                radial-gradient(
-                    circle at 82% 24%,
-                    rgba(255, 255, 255, 0.10),
-                    transparent 22%
-                ),
-                linear-gradient(
-                    125deg,
-                    #050606 0%,
-                    #111517 24%,
-                    #252b2f 47%,
-                    #0b0e0f 70%,
-                    #020303 100%
-                );
-            content: "";
-        }
-
-        body::after {
-            position: fixed;
-            inset: -30%;
-            z-index: -2;
-            pointer-events: none;
-            background:
-                linear-gradient(
-                    110deg,
-                    transparent 32%,
-                    rgba(255, 255, 255, 0.02) 40%,
-                    rgba(255, 255, 255, 0.24) 47%,
-                    rgba(255, 255, 255, 0.03) 54%,
-                    transparent 63%
-                );
-            content: "";
-            transform: translateX(-65%) rotate(-4deg);
-            animation: movingLight 11s ease-in-out infinite;
-        }
-
-        @keyframes movingLight {
-            0% {
-                transform: translateX(-65%) rotate(-4deg);
-                opacity: 0;
-            }
-
-            15% {
-                opacity: 0.7;
-            }
-
-            50% {
-                opacity: 1;
-            }
-
-            85% {
-                opacity: 0.65;
-            }
-
-            100% {
-                transform: translateX(65%) rotate(-4deg);
-                opacity: 0;
-            }
-        }
-
-        /*
-        -------------------------------------------------
-        HEADER
-        -------------------------------------------------
-        */
-
         header {
             position: sticky;
             top: 0;
@@ -174,39 +99,12 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            gap: 28px;
+            gap: 30px;
             min-height: 82px;
             padding: 10px 5%;
-            background:
-                linear-gradient(
-                    180deg,
-                    rgba(14, 17, 18, 0.98),
-                    rgba(6, 8, 9, 0.96)
-                );
-            border-bottom: 1px solid var(--line);
-            box-shadow:
-                0 8px 24px rgba(0, 0, 0, 0.38),
-                inset 0 1px 0 rgba(255, 255, 255, 0.08);
+            background: rgba(8, 9, 8, 0.95);
+            border-bottom: 1px solid var(--border);
             backdrop-filter: blur(12px);
-        }
-
-        header::after {
-            position: absolute;
-            right: 0;
-            bottom: -2px;
-            left: 0;
-            height: 3px;
-            background:
-                linear-gradient(
-                    90deg,
-                    transparent,
-                    rgba(255, 255, 255, 0.18),
-                    var(--gold),
-                    rgba(255, 255, 255, 0.18),
-                    transparent
-                );
-            content: "";
-            opacity: 0.45;
         }
 
         .brand {
@@ -214,19 +112,19 @@
             align-items: center;
             gap: 12px;
             color: var(--gold);
+            font-family: Arial, Helvetica, sans-serif;
             font-weight: 900;
             letter-spacing: 2px;
             text-decoration: none;
-            text-transform: uppercase;
         }
 
         .brand img {
-            width: 68px;
-            height: 58px;
+            width: 78px;
+            height: 62px;
             object-fit: contain;
-            filter:
-                drop-shadow(0 5px 10px rgba(0, 0, 0, 0.6))
-                drop-shadow(0 0 8px rgba(199, 164, 90, 0.18));
+            filter: drop-shadow(
+                0 6px 8px rgba(0, 0, 0, 0.5)
+            );
         }
 
         .brand span {
@@ -243,6 +141,7 @@
         nav a {
             position: relative;
             color: var(--soft-white);
+            font-family: Arial, Helvetica, sans-serif;
             font-size: 12px;
             font-weight: 800;
             letter-spacing: 1.2px;
@@ -252,13 +151,12 @@
 
         nav a::after {
             position: absolute;
-            bottom: -8px;
-            left: 50%;
+            bottom: -7px;
+            left: 0;
             width: 0;
             height: 2px;
             background: var(--gold);
             content: "";
-            transform: translateX(-50%);
             transition: width 0.2s ease;
         }
 
@@ -273,15 +171,10 @@
         .menu-button {
             display: none;
             padding: 8px;
-            background:
-                linear-gradient(
-                    145deg,
-                    #1b2022,
-                    #080a0b
-                );
-            border: 1px solid var(--line);
+            background: transparent;
+            border: 1px solid var(--border);
             border-radius: 4px;
-            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+            color: var(--cream);
             cursor: pointer;
         }
 
@@ -293,77 +186,19 @@
             background: var(--gold);
         }
 
-        /*
-        -------------------------------------------------
-        GENERAL LAYOUT
-        -------------------------------------------------
-        */
-
         main {
             overflow: hidden;
         }
 
         section {
-            position: relative;
             scroll-margin-top: 88px;
-            padding: 96px 7%;
+            padding: 95px 7%;
         }
 
         .container {
-            width: min(1180px, 100%);
+            width: min(1150px, 100%);
             margin: 0 auto;
         }
-
-        .metal-section {
-            background:
-                linear-gradient(
-                    180deg,
-                    rgba(9, 11, 12, 0.97),
-                    rgba(17, 21, 23, 0.96)
-                );
-            border-top: 1px solid var(--metal-line);
-            border-bottom: 1px solid rgba(0, 0, 0, 0.8);
-            box-shadow:
-                inset 0 1px 0 rgba(255, 255, 255, 0.05),
-                inset 0 -1px 0 rgba(255, 255, 255, 0.03);
-        }
-
-        .section-heading {
-            width: min(840px, 100%);
-            margin: 0 auto 48px;
-            text-align: center;
-        }
-
-        .eyebrow {
-            display: block;
-            color: var(--gold-light);
-            font-size: 11px;
-            font-weight: 900;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-        }
-
-        .section-heading h2 {
-            margin: 10px 0 15px;
-            color: var(--cream);
-            font-family: Georgia, "Times New Roman", serif;
-            font-size: clamp(36px, 5vw, 58px);
-            font-weight: 500;
-            letter-spacing: 1px;
-            line-height: 1.12;
-        }
-
-        .section-heading p {
-            margin: 0 auto;
-            color: var(--soft-white);
-            font-size: 18px;
-        }
-
-        /*
-        -------------------------------------------------
-        HERO
-        -------------------------------------------------
-        */
 
         .hero {
             position: relative;
@@ -371,189 +206,104 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 95px 24px;
-            overflow: hidden;
+            padding: 90px 24px;
             text-align: center;
             isolation: isolate;
             background:
-                radial-gradient(
-                    ellipse at 50% 18%,
-                    rgba(255, 255, 255, 0.16),
-                    transparent 28%
-                ),
                 linear-gradient(
-                    140deg,
-                    rgba(6, 8, 9, 0.82),
-                    rgba(35, 41, 44, 0.72) 42%,
-                    rgba(5, 6, 7, 0.94) 76%
+                    180deg,
+                    rgba(8, 9, 8, 0.45),
+                    rgba(8, 9, 8, 0.96)
+                ),
+                radial-gradient(
+                    circle at 50% 32%,
+                    #454d40 0%,
+                    #252a22 28%,
+                    #0b0d0b 72%
                 );
         }
 
         .hero::before {
             position: absolute;
-            inset: -15%;
-            z-index: -2;
-            background:
-                linear-gradient(
-                    35deg,
-                    transparent 42%,
-                    rgba(255, 255, 255, 0.15) 43%,
-                    rgba(255, 255, 255, 0.02) 44%,
-                    transparent 45%
-                ),
-                linear-gradient(
-                    145deg,
-                    transparent 48%,
-                    rgba(255, 255, 255, 0.13) 49%,
-                    rgba(255, 255, 255, 0.02) 50%,
-                    transparent 51%
-                ),
-                radial-gradient(
-                    circle at 32% 50%,
-                    rgba(255, 255, 255, 0.12),
-                    transparent 24%
-                );
-            content: "";
-            opacity: 0.9;
-        }
-
-        .hero::after {
-            position: absolute;
             inset: 0;
             z-index: -1;
-            background:
-                linear-gradient(
-                    90deg,
-                    transparent 9%,
-                    rgba(255, 255, 255, 0.06) 9.2%,
-                    transparent 9.5%
-                ),
-                linear-gradient(
-                    90deg,
-                    transparent 90%,
-                    rgba(255, 255, 255, 0.05) 90.2%,
-                    transparent 90.5%
-                );
-            content: "";
-            pointer-events: none;
-        }
-
-        .hero-rivets {
-            position: absolute;
-            inset: 0;
-            z-index: -1;
-            opacity: 0.45;
-            pointer-events: none;
+            opacity: 0.14;
             background-image:
-                radial-gradient(
-                    circle,
-                    rgba(255, 255, 255, 0.5) 0 1px,
-                    rgba(0, 0, 0, 0.8) 2px,
-                    transparent 3px
-                );
-            background-position:
-                40px 22px,
-                calc(100% - 40px) 22px;
-            background-size:
-                34px 70px,
-                34px 70px;
-            background-repeat:
-                repeat-y,
-                repeat-y;
-        }
-
-        .hero-light {
-            position: absolute;
-            top: -25%;
-            left: -45%;
-            width: 70%;
-            height: 145%;
-            z-index: -1;
-            pointer-events: none;
-            background:
                 linear-gradient(
-                    100deg,
-                    transparent 20%,
-                    rgba(255, 255, 255, 0.08) 38%,
-                    rgba(255, 255, 255, 0.38) 49%,
-                    rgba(255, 255, 255, 0.10) 61%,
-                    transparent 78%
+                    90deg,
+                    transparent 49.8%,
+                    rgba(201, 166, 83, 0.2) 50%,
+                    transparent 50.2%
+                ),
+                linear-gradient(
+                    rgba(255, 255, 255, 0.025) 1px,
+                    transparent 1px
                 );
-            filter: blur(10px);
-            transform: rotate(-10deg);
-            animation: heroSweep 9s ease-in-out infinite;
-        }
-
-        @keyframes heroSweep {
-            0% {
-                left: -65%;
-                opacity: 0;
-            }
-
-            20% {
-                opacity: 0.75;
-            }
-
-            55% {
-                opacity: 1;
-            }
-
-            80% {
-                opacity: 0.7;
-            }
-
-            100% {
-                left: 105%;
-                opacity: 0;
-            }
+            background-size: 100% 100%, 100% 36px;
+            content: "";
         }
 
         .hero-content {
-            width: min(970px, 100%);
+            width: min(960px, 100%);
         }
 
         .hero-logo {
-            width: min(360px, 76vw);
-            max-height: 300px;
-            margin: 0 auto 20px;
+            width: min(520px, 88vw);
+            max-height: 430px;
+            margin: 0 auto 22px;
             object-fit: contain;
+
             filter:
-                drop-shadow(0 18px 28px rgba(0, 0, 0, 0.72))
-                drop-shadow(0 0 18px rgba(199, 164, 90, 0.2));
+                drop-shadow(
+                    0 22px 18px rgba(0, 0, 0, 0.58)
+                )
+                drop-shadow(
+                    0 0 24px rgba(201, 166, 83, 0.2)
+                );
+
+            animation:
+                logoFloat 5s ease-in-out infinite;
         }
 
-        .hero-kicker {
+        @keyframes logoFloat {
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-14px);
+            }
+        }
+
+        .hero-kicker,
+        .eyebrow {
+            display: block;
             color: var(--gold-light);
-            font-size: 11px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 12px;
             font-weight: 900;
-            letter-spacing: 4px;
+            letter-spacing: 3px;
             text-transform: uppercase;
         }
 
         .hero h1 {
-            max-width: 980px;
+            max-width: 950px;
             margin: 18px auto 14px;
             color: var(--cream);
-            font-family: Georgia, "Times New Roman", serif;
-            font-size: clamp(43px, 7vw, 82px);
-            font-weight: 500;
-            letter-spacing: 1px;
-            line-height: 1.04;
-            text-shadow:
-                0 4px 12px rgba(0, 0, 0, 0.75),
-                0 0 15px rgba(255, 255, 255, 0.05);
+            font-size: clamp(42px, 7vw, 78px);
+            line-height: 1.06;
         }
 
         .hero-subtitle {
-            margin: 0;
+            margin: 0 auto;
             color: var(--gold-light);
-            font-family: Georgia, "Times New Roman", serif;
-            font-size: clamp(19px, 3vw, 26px);
+            font-size: clamp(18px, 3vw, 25px);
             font-style: italic;
         }
 
         .hero-description {
-            max-width: 780px;
+            max-width: 760px;
             margin: 25px auto 0;
             color: var(--soft-white);
             font-size: 18px;
@@ -563,159 +313,129 @@
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            gap: 15px;
-            margin-top: 35px;
+            gap: 14px;
+            margin-top: 34px;
         }
 
         .button {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            min-width: 180px;
+            min-width: 175px;
             min-height: 50px;
-            padding: 13px 24px;
-            border: 1px solid var(--gold);
-            border-radius: 2px;
-            box-shadow:
-                inset 0 1px 0 rgba(255, 255, 255, 0.14),
-                0 10px 24px rgba(0, 0, 0, 0.3);
-            font-size: 11px;
+            padding: 13px 23px;
+            border: 2px solid var(--gold);
+            border-radius: 4px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 12px;
             font-weight: 900;
-            letter-spacing: 1.4px;
+            letter-spacing: 1.2px;
             text-decoration: none;
             text-transform: uppercase;
             transition:
                 transform 0.2s ease,
                 background 0.2s ease,
-                color 0.2s ease,
-                box-shadow 0.2s ease;
+                color 0.2s ease;
         }
 
         .button:hover {
             transform: translateY(-3px);
-            box-shadow:
-                inset 0 1px 0 rgba(255, 255, 255, 0.2),
-                0 15px 30px rgba(0, 0, 0, 0.45);
         }
 
         .button-primary {
-            background:
-                linear-gradient(
-                    145deg,
-                    var(--gold-light),
-                    #9f7b35
-                );
-            color: #080808;
+            background: var(--gold);
+            color: var(--black);
+        }
+
+        .button-primary:hover {
+            background: var(--gold-light);
         }
 
         .button-secondary {
-            background:
-                linear-gradient(
-                    145deg,
-                    rgba(40, 45, 47, 0.85),
-                    rgba(7, 9, 10, 0.92)
-                );
             color: var(--cream);
         }
 
-        /*
-        -------------------------------------------------
-        METAL PANEL
-        -------------------------------------------------
-        */
+        .button-secondary:hover {
+            background: var(--gold);
+            color: var(--black);
+        }
 
-        .metal-panel {
-            position: relative;
-            overflow: hidden;
+        .dark-section {
+            background: var(--charcoal);
+        }
+
+        .warm-section {
             background:
                 linear-gradient(
                     135deg,
-                    rgba(255, 255, 255, 0.06),
-                    transparent 22%
+                    rgba(92, 71, 53, 0.18),
+                    transparent 50%
                 ),
-                linear-gradient(
-                    145deg,
-                    #202629,
-                    #0b0e0f 52%,
-                    #171b1d
-                );
-            border: 1px solid rgba(255, 255, 255, 0.12);
-            border-radius: 7px;
-            box-shadow:
-                var(--shadow),
-                inset 0 1px 0 rgba(255, 255, 255, 0.12),
-                inset 0 -1px 0 rgba(0, 0, 0, 0.8);
+                var(--charcoal-light);
         }
 
-        .metal-panel::before,
-        .metal-panel::after {
-            position: absolute;
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            background:
-                radial-gradient(
-                    circle at 35% 35%,
-                    #e1e5e7,
-                    #60686d 40%,
-                    #111 72%
-                );
-            box-shadow:
-                0 0 0 1px rgba(0, 0, 0, 0.9),
-                0 2px 3px rgba(0, 0, 0, 0.8);
-            content: "";
+        .section-heading {
+            width: min(820px, 100%);
+            margin: 0 auto 48px;
+            text-align: center;
         }
 
-        .metal-panel::before {
-            top: 12px;
-            left: 12px;
+        .section-heading h2 {
+            margin: 9px 0 15px;
+            color: var(--gold);
+            font-size: clamp(34px, 5vw, 54px);
+            line-height: 1.16;
         }
 
-        .metal-panel::after {
-            right: 12px;
-            bottom: 12px;
+        .section-heading p {
+            margin: 0 auto;
+            color: var(--soft-white);
+            font-size: 18px;
         }
-
-        /*
-        -------------------------------------------------
-        STORY
-        -------------------------------------------------
-        */
 
         .story-layout {
             display: grid;
             grid-template-columns: 0.9fr 1.35fr;
-            gap: 50px;
+            gap: 55px;
             align-items: start;
         }
 
         .story-marker {
             position: sticky;
-            top: 112px;
-            padding: 34px;
-            text-align: center;
+            top: 115px;
+            padding: 35px;
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(201, 166, 83, 0.1),
+                    transparent
+                ),
+                var(--card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            box-shadow: var(--shadow);
         }
 
         .story-marker img {
-            width: 190px;
+            width: 245px;
             margin: 0 auto 22px;
+            filter:
+                drop-shadow(
+                    0 12px 12px rgba(0, 0, 0, 0.5)
+                );
         }
 
         .story-marker h3 {
             margin: 0;
             color: var(--gold);
-            font-family: Georgia, "Times New Roman", serif;
-            font-size: 31px;
-            font-weight: 500;
+            font-size: 30px;
+            text-align: center;
         }
 
         .story-marker p {
             margin-bottom: 0;
             color: var(--gray);
-        }
-
-        .story-copy {
-            padding: 38px;
+            text-align: center;
         }
 
         .story-copy p {
@@ -729,50 +449,35 @@
         }
 
         .story-highlight {
-            margin: 34px 0 0;
+            margin: 35px 0;
             padding: 28px 30px;
-            background:
-                linear-gradient(
-                    90deg,
-                    rgba(199, 164, 90, 0.12),
-                    transparent
-                );
+            background: rgba(201, 166, 83, 0.06);
             border-left: 4px solid var(--gold);
             color: var(--cream);
-            font-family: Georgia, "Times New Roman", serif;
-            font-size: clamp(22px, 3vw, 30px);
+            font-size: clamp(21px, 3vw, 29px);
             font-style: italic;
             line-height: 1.4;
         }
 
-        /*
-        -------------------------------------------------
-        MISSION
-        -------------------------------------------------
-        */
-
         .mission-statement {
-            width: min(920px, 100%);
+            width: min(900px, 100%);
             margin: 0 auto;
-            padding: 50px;
+            padding: 48px;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            box-shadow: var(--shadow);
             text-align: center;
         }
 
         .mission-statement p {
             color: var(--soft-white);
-            font-family: Georgia, "Times New Roman", serif;
-            font-size: clamp(20px, 3vw, 25px);
+            font-size: clamp(19px, 3vw, 24px);
         }
 
         .mission-statement p:last-child {
             margin-bottom: 0;
         }
-
-        /*
-        -------------------------------------------------
-        CARDS
-        -------------------------------------------------
-        */
 
         .cards {
             display: grid;
@@ -783,20 +488,39 @@
 
         .card {
             position: relative;
-            min-height: 270px;
-            padding: 35px 28px;
+            padding: 34px 28px;
+            overflow: hidden;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            box-shadow:
+                0 12px 30px rgba(0, 0, 0, 0.18);
             transition:
-                transform 0.25s ease,
-                border-color 0.25s ease;
+                transform 0.2s ease,
+                background 0.2s ease,
+                border-color 0.2s ease;
+        }
+
+        .card::before {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 75px;
+            height: 3px;
+            background: var(--gold);
+            content: "";
         }
 
         .card:hover {
-            transform: translateY(-6px);
-            border-color: rgba(224, 198, 132, 0.5);
+            transform: translateY(-5px);
+            background: var(--card-hover);
+            border-color:
+                rgba(201, 166, 83, 0.55);
         }
 
         .card-number {
-            color: rgba(199, 164, 90, 0.42);
+            color: rgba(201, 166, 83, 0.35);
+            font-family: Arial, Helvetica, sans-serif;
             font-size: 34px;
             font-weight: 900;
         }
@@ -804,9 +528,7 @@
         .card h3 {
             margin: 8px 0 13px;
             color: var(--gold-light);
-            font-family: Georgia, "Times New Roman", serif;
-            font-size: 28px;
-            font-weight: 500;
+            font-size: 27px;
         }
 
         .card p {
@@ -816,21 +538,13 @@
         }
 
         .faith-verse {
-            width: min(820px, 100%);
+            width: min(800px, 100%);
             margin: 48px auto 0;
             padding: 30px;
-            background:
-                linear-gradient(
-                    90deg,
-                    transparent,
-                    rgba(199, 164, 90, 0.08),
-                    transparent
-                );
             border-top: 1px solid var(--gold);
             border-bottom: 1px solid var(--gold);
             color: var(--cream);
-            font-family: Georgia, "Times New Roman", serif;
-            font-size: 21px;
+            font-size: 20px;
             font-style: italic;
             text-align: center;
         }
@@ -840,28 +554,23 @@
             margin-top: 7px;
             color: var(--gold-light);
             font-family: Arial, Helvetica, sans-serif;
-            font-size: 12px;
+            font-size: 13px;
             font-style: normal;
-            letter-spacing: 1.5px;
+            letter-spacing: 1px;
             text-transform: uppercase;
         }
 
-        /*
-        -------------------------------------------------
-        FEATURE CARDS
-        -------------------------------------------------
-        */
-
         .feature-card {
-            min-height: 300px;
+            min-height: 290px;
             display: flex;
             flex-direction: column;
             justify-content: flex-end;
         }
 
-        .feature-type {
+        .feature-card .feature-type {
             margin-bottom: auto;
             color: var(--gold);
+            font-family: Arial, Helvetica, sans-serif;
             font-size: 11px;
             font-weight: 900;
             letter-spacing: 2px;
@@ -873,82 +582,66 @@
             align-self: flex-start;
             margin-top: 20px;
             padding: 7px 11px;
-            background:
-                linear-gradient(
-                    145deg,
-                    rgba(199, 164, 90, 0.16),
-                    rgba(0, 0, 0, 0.4)
-                );
-            border: 1px solid var(--line);
-            border-radius: 2px;
+            background: rgba(201, 166, 83, 0.12);
+            border: 1px solid var(--border);
+            border-radius: 3px;
             color: var(--gold-light);
+            font-family: Arial, Helvetica, sans-serif;
             font-size: 10px;
             font-weight: 900;
             letter-spacing: 1.2px;
             text-transform: uppercase;
         }
 
-        /*
-        -------------------------------------------------
-        MEDIA
-        -------------------------------------------------
-        */
-
         .media-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 28px;
+            gap: 26px;
         }
 
         .media-panel {
-            min-height: 340px;
+            min-height: 330px;
             display: flex;
             flex-direction: column;
             justify-content: center;
             padding: 45px;
+            background:
+                radial-gradient(
+                    circle at top right,
+                    rgba(201, 166, 83, 0.11),
+                    transparent 45%
+                ),
+                var(--card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            box-shadow: var(--shadow);
             text-align: center;
         }
 
         .media-icon {
-            width: 74px;
-            height: 74px;
+            width: 70px;
+            height: 70px;
             display: grid;
             place-items: center;
             margin: 0 auto 20px;
-            background:
-                radial-gradient(
-                    circle,
-                    rgba(255, 255, 255, 0.08),
-                    rgba(0, 0, 0, 0.4)
-                );
             border: 2px solid var(--gold);
             border-radius: 50%;
             color: var(--gold-light);
-            font-size: 23px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 22px;
             font-weight: 900;
-            box-shadow:
-                inset 0 1px 0 rgba(255, 255, 255, 0.12),
-                0 12px 25px rgba(0, 0, 0, 0.4);
         }
 
         .media-panel h3 {
             margin: 0 0 12px;
             color: var(--gold);
-            font-family: Georgia, "Times New Roman", serif;
-            font-size: 31px;
-            font-weight: 500;
+            font-size: 30px;
         }
 
         .media-panel p {
             margin: 0;
             color: var(--soft-white);
         }
-
-        /*
-        -------------------------------------------------
-        APPAREL
-        -------------------------------------------------
-        */
 
         .apparel-grid {
             display: grid;
@@ -961,15 +654,27 @@
             display: flex;
             flex-direction: column;
             justify-content: flex-end;
-            padding: 36px;
+            padding: 35px;
+            background:
+                linear-gradient(
+                    180deg,
+                    transparent,
+                    rgba(8, 9, 8, 0.96)
+                ),
+                radial-gradient(
+                    circle at center top,
+                    #4d5547,
+                    #171a16 70%
+                );
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            box-shadow: var(--shadow);
         }
 
         .product-card h3 {
-            margin: 8px 0;
+            margin: 0 0 8px;
             color: var(--gold);
-            font-family: Georgia, "Times New Roman", serif;
-            font-size: 31px;
-            font-weight: 500;
+            font-size: 30px;
         }
 
         .product-card p {
@@ -977,30 +682,18 @@
             color: var(--soft-white);
         }
 
-        /*
-        -------------------------------------------------
-        INSPIRATION
-        -------------------------------------------------
-        */
-
         .inspiration-layout {
             display: grid;
             grid-template-columns: 1.15fr 0.85fr;
-            gap: 42px;
+            gap: 45px;
             align-items: center;
         }
 
-        .inspiration-copy {
-            padding: 42px;
-        }
-
         .inspiration-copy h2 {
-            margin: 10px 0 18px;
-            color: var(--cream);
-            font-family: Georgia, "Times New Roman", serif;
-            font-size: clamp(37px, 5vw, 60px);
-            font-weight: 500;
-            line-height: 1.1;
+            margin: 8px 0 18px;
+            color: var(--gold);
+            font-size: clamp(36px, 5vw, 59px);
+            line-height: 1.12;
         }
 
         .inspiration-copy p {
@@ -1010,14 +703,19 @@
 
         .inspiration-list {
             margin: 0;
-            padding: 32px;
+            padding: 30px;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            box-shadow: var(--shadow);
             list-style: none;
         }
 
         .inspiration-list li {
             position: relative;
             padding: 15px 0 15px 28px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            border-bottom:
+                1px solid rgba(201, 166, 83, 0.14);
             color: var(--soft-white);
         }
 
@@ -1032,17 +730,13 @@
             content: "◆";
         }
 
-        /*
-        -------------------------------------------------
-        PROMISE
-        -------------------------------------------------
-        */
+        .promise {
+            text-align: center;
+        }
 
         .promise-copy {
-            width: min(920px, 100%);
+            width: min(900px, 100%);
             margin: 0 auto;
-            padding: 45px;
-            text-align: center;
         }
 
         .promise-copy p {
@@ -1055,48 +749,43 @@
         }
 
         .disclaimer {
-            width: min(920px, 100%);
-            margin: 34px auto 0;
+            width: min(900px, 100%);
+            margin: 35px auto 0;
             padding: 25px;
-            background: rgba(0, 0, 0, 0.32);
-            border: 1px solid var(--line);
+            background: rgba(0, 0, 0, 0.25);
+            border: 1px solid var(--border);
+            border-radius: 5px;
             color: var(--gray);
+            font-family: Arial, Helvetica, sans-serif;
             font-size: 13px;
             line-height: 1.6;
         }
 
-        /*
-        -------------------------------------------------
-        CONTACT
-        -------------------------------------------------
-        */
-
         .contact-panel {
             display: grid;
-            grid-template-columns: 1.15fr 0.85fr;
-            gap: 30px;
+            grid-template-columns: 1fr 1fr;
+            gap: 35px;
+            align-items: stretch;
         }
 
         .contact-message,
         .contact-details {
-            padding: 42px;
+            padding: 40px;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            box-shadow: var(--shadow);
         }
 
-        .contact-message h2 {
-            margin: 8px 0 16px;
-            color: var(--cream);
-            font-family: Georgia, "Times New Roman", serif;
-            font-size: clamp(36px, 5vw, 53px);
-            font-weight: 500;
-            line-height: 1.12;
-        }
-
+        .contact-message h2,
         .contact-details h3 {
             margin-top: 0;
             color: var(--gold);
-            font-family: Georgia, "Times New Roman", serif;
-            font-size: 31px;
-            font-weight: 500;
+        }
+
+        .contact-message h2 {
+            font-size: clamp(34px, 5vw, 50px);
+            line-height: 1.15;
         }
 
         .contact-message p,
@@ -1106,8 +795,9 @@
 
         .contact-email {
             display: inline-block;
-            margin-top: 10px;
+            margin-top: 12px;
             color: var(--gold-light);
+            font-family: Arial, Helvetica, sans-serif;
             font-weight: 800;
             text-decoration: none;
         }
@@ -1116,33 +806,25 @@
             text-decoration: underline;
         }
 
-        /*
-        -------------------------------------------------
-        FOOTER
-        -------------------------------------------------
-        */
-
         footer {
-            position: relative;
             padding: 55px 6% 35px;
-            background:
-                linear-gradient(
-                    180deg,
-                    rgba(15, 18, 19, 0.98),
-                    #030404
-                );
-            border-top: 1px solid var(--line);
-            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
+            background: #050605;
+            border-top: 1px solid var(--border);
             text-align: center;
         }
 
         .footer-logo {
-            width: 125px;
+            width: 190px;
             margin: 0 auto 18px;
+            filter:
+                drop-shadow(
+                    0 12px 10px rgba(0, 0, 0, 0.5)
+                );
         }
 
         .footer-values {
             color: var(--gold);
+            font-family: Arial, Helvetica, sans-serif;
             font-size: 12px;
             font-weight: 900;
             letter-spacing: 2px;
@@ -1150,22 +832,34 @@
         }
 
         .footer-disclaimer {
-            max-width: 760px;
+            max-width: 750px;
             margin: 18px auto;
-            color: #83898a;
+            color: #878d84;
+            font-family: Arial, Helvetica, sans-serif;
             font-size: 11px;
         }
 
         .footer-copy {
-            color: #777d7e;
+            color: #777d74;
+            font-family: Arial, Helvetica, sans-serif;
             font-size: 12px;
         }
 
-        /*
-        -------------------------------------------------
-        RESPONSIVE
-        -------------------------------------------------
-        */
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            .hero-logo {
+                animation: none;
+            }
+
+            .button,
+            .card,
+            nav a::after {
+                transition: none;
+            }
+        }
 
         @media (max-width: 1000px) {
             nav {
@@ -1193,8 +887,8 @@
             }
 
             .brand img {
-                width: 58px;
-                height: 50px;
+                width: 70px;
+                height: 54px;
             }
 
             .brand span {
@@ -1217,13 +911,8 @@
                 align-items: stretch;
                 gap: 0;
                 padding: 30px;
-                background:
-                    linear-gradient(
-                        145deg,
-                        #171c1e,
-                        #050606
-                    );
-                border-left: 1px solid var(--line);
+                background: #0b0d0b;
+                border-left: 1px solid var(--border);
                 transform: translateX(105%);
                 transition: transform 0.25s ease;
             }
@@ -1234,13 +923,14 @@
 
             nav a {
                 padding: 15px 0;
-                border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+                border-bottom:
+                    1px solid rgba(201, 166, 83, 0.15);
                 font-size: 12px;
             }
 
             section {
                 scroll-margin-top: 74px;
-                padding: 74px 22px;
+                padding: 72px 22px;
             }
 
             .hero {
@@ -1253,10 +943,7 @@
                 grid-template-columns: 1fr;
             }
 
-            .story-copy,
             .mission-statement,
-            .inspiration-copy,
-            .promise-copy,
             .contact-message,
             .contact-details {
                 padding: 30px 24px;
@@ -1269,7 +956,7 @@
             }
 
             .hero-logo {
-                width: 245px;
+                width: 310px;
             }
 
             .hero h1 {
@@ -1294,22 +981,6 @@
                 font-size: 18px;
             }
         }
-
-        @media (prefers-reduced-motion: reduce) {
-            html {
-                scroll-behavior: auto;
-            }
-
-            body::after,
-            .hero-light {
-                animation: none;
-            }
-
-            .button,
-            .card {
-                transition: none;
-            }
-        }
     </style>
 </head>
 
@@ -1320,10 +991,14 @@
 </a>
 
 <header>
-    <a class="brand" href="#home" aria-label="Huey Loop home">
+    <a
+        class="brand"
+        href="#home"
+        aria-label="Huey Loop home"
+    >
         <img
-            src="hueyloop-logo.png"
-            alt="Huey Loop microphone and wings logo"
+            src="hueyloop-logo-new.png"
+            alt="Huey Loop winged microphone logo"
         >
 
         <span>Huey Loop</span>
@@ -1355,16 +1030,12 @@
 <main id="main-content">
 
     <section class="hero" id="home">
-
-        <div class="hero-rivets"></div>
-        <div class="hero-light"></div>
-
         <div class="hero-content">
 
             <img
                 class="hero-logo"
-                src="hueyloop-logo.png"
-                alt="Huey Loop logo"
+                src="hueyloop-logo-new.png"
+                alt="Huey Loop winged microphone logo"
             >
 
             <span class="hero-kicker">
@@ -1382,12 +1053,11 @@
             <p class="hero-description">
                 Huey Loop is a Christian, military family-owned
                 business dedicated to preserving the voices,
-                experiences, wisdom, faith, humor, and legacy of the
-                friends and loved ones who shape our lives.
+                experiences, wisdom, faith, humor, and legacy of
+                the friends and loved ones who shape our lives.
             </p>
 
             <div class="button-row">
-
                 <a
                     class="button button-primary"
                     href="#our-story"
@@ -1401,16 +1071,18 @@
                 >
                     Why Stories Matter
                 </a>
-
             </div>
+
         </div>
     </section>
 
-    <section class="metal-section" id="our-story">
+    <section id="our-story">
         <div class="container">
 
             <div class="section-heading">
-                <span class="eyebrow">Where It Began</span>
+                <span class="eyebrow">
+                    Where It Began
+                </span>
 
                 <h2>Why Huey Loop?</h2>
 
@@ -1422,24 +1094,22 @@
 
             <div class="story-layout">
 
-                <aside class="story-marker metal-panel">
-
+                <aside class="story-marker">
                     <img
-                        src="hueyloop-logo.png"
+                        src="hueyloop-logo-new.png"
                         alt="Huey Loop logo"
                     >
 
                     <h3>A Real Place</h3>
 
                     <p>
-                        An old Army hangar on Huey Loop at Simmons
-                        Army Airfield became the starting point of a
-                        much larger story.
+                        An old Army hangar on Huey Loop at
+                        Simmons Army Airfield became the starting
+                        point of a much larger story.
                     </p>
-
                 </aside>
 
-                <div class="story-copy metal-panel">
+                <div class="story-copy">
 
                     <p>
                         <strong>
@@ -1449,21 +1119,21 @@
                     </p>
 
                     <p>
-                        In 2006, I walked into an old Army hangar on
-                        Huey Loop at Simmons Army Airfield and began
-                        my journey in military aviation. At the time,
-                        I thought I was simply beginning a career.
-                        Looking back, I believe God was beginning a
-                        much greater story.
+                        In 2006, I walked into an old Army hangar
+                        on Huey Loop at Simmons Army Airfield and
+                        began my journey in military aviation.
+                        At the time, I thought I was simply
+                        beginning a career. Looking back, I believe
+                        God was beginning a much greater story.
                     </p>
 
                     <p>
-                        Over the years, I served alongside remarkable
-                        people. Together we experienced hardship,
-                        sacrifice, laughter, friendship, success,
-                        failure, and moments that shaped our lives in
-                        ways we could not fully appreciate at the
-                        time.
+                        Over the years, I served alongside
+                        remarkable people. Together we experienced
+                        hardship, sacrifice, laughter, friendship,
+                        success, failure, and moments that shaped
+                        our lives in ways we could not fully
+                        appreciate at the time.
                     </p>
 
                     <p>
@@ -1478,9 +1148,9 @@
                     </p>
 
                     <p>
-                        Standing there, I realized something that has
-                        never left me. The buildings were never what
-                        made that place special.
+                        Standing there, I realized something that
+                        has never left me. The buildings were never
+                        what made that place special.
                     </p>
 
                     <p>
@@ -1488,23 +1158,23 @@
                     </p>
 
                     <p>
-                        The conversations. The friendships. The
-                        mentors. The families. The sacrifices. The
-                        faith. The memories. The stories.
+                        The conversations. The friendships.
+                        The mentors. The families. The sacrifices.
+                        The faith. The memories. The stories.
                     </p>
 
                     <p>
                         That realization became the foundation of
                         Huey Loop. This business exists because I
                         believe the greatest legacy we leave behind
-                        is not found in possessions or titles, but in
-                        the lives we touch and the stories we
+                        is not found in possessions or titles, but
+                        in the lives we touch and the stories we
                         preserve.
                     </p>
 
                     <div class="story-highlight">
-                        Places may begin our stories, but people give
-                        them meaning.
+                        Places may begin our stories, but people
+                        give them meaning.
                     </div>
 
                 </div>
@@ -1512,79 +1182,85 @@
         </div>
     </section>
 
-    <section id="mission">
+    <section class="dark-section" id="mission">
         <div class="container">
 
             <div class="section-heading">
-                <span class="eyebrow">Why We Exist</span>
+                <span class="eyebrow">
+                    Why We Exist
+                </span>
+
                 <h2>Our Mission</h2>
             </div>
 
-            <div class="mission-statement metal-panel">
+            <div class="mission-statement">
 
                 <p>
-                    Huey Loop exists to preserve the stories, voices,
-                    wisdom, humor, faith, and legacy of the people
-                    who shape our lives.
+                    Huey Loop exists to preserve the stories,
+                    voices, wisdom, humor, faith, and legacy of
+                    the people who shape our lives.
                 </p>
 
                 <p>
                     Through meaningful conversations, videos,
-                    podcasts, writing, and original apparel, we seek
-                    to ensure those stories continue to inspire
-                    generations to come.
+                    podcasts, writing, and original apparel, we
+                    seek to ensure those stories continue to
+                    inspire generations to come.
                 </p>
 
             </div>
         </div>
     </section>
 
-    <section class="metal-section" id="foundation">
+    <section id="foundation">
         <div class="container">
 
             <div class="section-heading">
-                <span class="eyebrow">What Guides Us</span>
+                <span class="eyebrow">
+                    What Guides Us
+                </span>
 
                 <h2>Our Foundation</h2>
 
                 <p>
-                    Huey Loop is built on principles that guide how
-                    we treat people, conduct business, and preserve
-                    the stories entrusted to us.
+                    Huey Loop is built on principles that guide
+                    how we treat people, conduct business, and
+                    preserve the stories entrusted to us.
                 </p>
             </div>
 
             <div class="cards">
 
-                <article class="card metal-panel">
+                <article class="card">
                     <div class="card-number">01</div>
 
                     <h3>Faith</h3>
 
                     <p>
                         Our Christian faith is the foundation of
-                        Huey Loop. We believe every person is created
-                        by God with dignity, purpose, and immeasurable
-                        worth. Our desire is to honor Him through
-                        integrity, humility, excellence, and service.
+                        Huey Loop. We believe every person is
+                        created by God with dignity, purpose, and
+                        immeasurable worth. Our desire is to honor
+                        Him through integrity, humility,
+                        excellence, and service.
                     </p>
                 </article>
 
-                <article class="card metal-panel">
+                <article class="card">
                     <div class="card-number">02</div>
 
                     <h3>Family</h3>
 
                     <p>
                         The voices of those we love are among our
-                        greatest treasures. Preserving family stories
-                        is one of the greatest gifts we can leave for
-                        children, grandchildren, and generations
-                        still to come.
+                        greatest treasures. Preserving family
+                        stories is one of the greatest gifts we
+                        can leave for children, grandchildren, and
+                        generations still to come.
                     </p>
                 </article>
 
-                <article class="card metal-panel">
+                <article class="card">
                     <div class="card-number">03</div>
 
                     <h3>Service</h3>
@@ -1593,12 +1269,12 @@
                         Service takes many forms. It is found in
                         homes, churches, classrooms, hospitals,
                         workshops, neighborhoods, and communities.
-                        Every life devoted to helping others deserves
-                        to be remembered.
+                        Every life devoted to helping others
+                        deserves to be remembered.
                     </p>
                 </article>
 
-                <article class="card metal-panel">
+                <article class="card">
                     <div class="card-number">04</div>
 
                     <h3>Legacy</h3>
@@ -1607,8 +1283,8 @@
                         Legacy is not measured only by titles,
                         possessions, or accomplishments. It is
                         measured by faith shared, people loved,
-                        lives changed, lessons passed forward, and
-                        stories remembered.
+                        lives changed, lessons passed forward,
+                        and stories remembered.
                     </p>
                 </article>
 
@@ -1624,73 +1300,90 @@
         </div>
     </section>
 
-    <section id="stories">
+    <section class="warm-section" id="stories">
         <div class="container">
 
             <div class="section-heading">
-                <span class="eyebrow">Voices Worth Preserving</span>
+                <span class="eyebrow">
+                    Voices Worth Preserving
+                </span>
 
                 <h2>Stories</h2>
 
                 <p>
                     Real conversations that preserve memories,
-                    wisdom, humor, faith, and lessons from the friends
-                    and loved ones who shaped our lives.
+                    wisdom, humor, faith, and lessons from the
+                    friends and loved ones who shaped our lives.
                 </p>
             </div>
 
             <div class="cards">
 
-                <article class="card feature-card metal-panel">
-                    <span class="feature-type">Friends</span>
+                <article class="card feature-card">
+                    <span class="feature-type">
+                        Friends
+                    </span>
 
                     <h3>Friends and Mentors</h3>
 
                     <p>
                         Preserving the stories of the people whose
-                        friendship, leadership, character, and wisdom
-                        shaped our lives.
+                        friendship, leadership, character, and
+                        wisdom shaped our lives.
                     </p>
 
-                    <span class="status-label">Coming Soon</span>
+                    <span class="status-label">
+                        Coming Soon
+                    </span>
                 </article>
 
-                <article class="card feature-card metal-panel">
-                    <span class="feature-type">Family</span>
+                <article class="card feature-card">
+                    <span class="feature-type">
+                        Family
+                    </span>
 
                     <h3>Family Legacy</h3>
 
                     <p>
-                        Capturing the voices, memories, laughter, and
-                        experiences of the people our family loves.
+                        Capturing the voices, memories, laughter,
+                        and experiences of the people our family
+                        loves.
                     </p>
 
-                    <span class="status-label">Coming Soon</span>
+                    <span class="status-label">
+                        Coming Soon
+                    </span>
                 </article>
 
-                <article class="card feature-card metal-panel">
-                    <span class="feature-type">Service</span>
+                <article class="card feature-card">
+                    <span class="feature-type">
+                        Service
+                    </span>
 
                     <h3>Lives of Service</h3>
 
                     <p>
-                        Honoring people whose sacrifice, commitment,
-                        faith, and quiet service made a lasting
-                        difference in the lives around them.
+                        Honoring people whose sacrifice,
+                        commitment, faith, and quiet service made
+                        a lasting difference.
                     </p>
 
-                    <span class="status-label">Coming Soon</span>
+                    <span class="status-label">
+                        Coming Soon
+                    </span>
                 </article>
 
             </div>
         </div>
     </section>
 
-    <section class="metal-section" id="media">
+    <section id="media">
         <div class="container">
 
             <div class="section-heading">
-                <span class="eyebrow">Listen and Watch</span>
+                <span class="eyebrow">
+                    Listen and Watch
+                </span>
 
                 <h2>Podcast and Videos</h2>
 
@@ -1703,7 +1396,7 @@
 
             <div class="media-grid">
 
-                <article class="media-panel metal-panel">
+                <article class="media-panel">
                     <div class="media-icon">▶</div>
 
                     <h3>Huey Loop Podcast</h3>
@@ -1714,102 +1407,122 @@
                         deserve to be heard and remembered.
                     </p>
 
-                    <span class="status-label">Launching Soon</span>
+                    <span class="status-label">
+                        Launching Soon
+                    </span>
                 </article>
 
-                <article class="media-panel metal-panel">
+                <article class="media-panel">
                     <div class="media-icon">●</div>
 
                     <h3>Video Interviews</h3>
 
                     <p>
                         Personal interviews preserving the voices,
-                        expressions, laughter, memories, and lessons
-                        of our friends and loved ones.
+                        expressions, laughter, memories, and
+                        lessons of our friends and loved ones.
                     </p>
 
-                    <span class="status-label">Launching Soon</span>
+                    <span class="status-label">
+                        Launching Soon
+                    </span>
                 </article>
 
             </div>
         </div>
     </section>
 
-    <section id="apparel">
+    <section class="dark-section" id="apparel">
         <div class="container">
 
             <div class="section-heading">
-                <span class="eyebrow">Supporting the Mission</span>
+                <span class="eyebrow">
+                    Supporting the Mission
+                </span>
 
                 <h2>Huey Loop Apparel</h2>
 
                 <p>
-                    Original apparel inspired by meaningful stories,
-                    craftsmanship, aviation culture, humor, and the
-                    people behind the designs. Every purchase helps
-                    support the work of Huey Loop.
+                    Original apparel inspired by meaningful
+                    stories, craftsmanship, aviation culture,
+                    humor, and the people behind the designs.
+                    Every purchase helps support the work of
+                    Huey Loop.
                 </p>
             </div>
 
             <div class="apparel-grid">
 
-                <article class="product-card metal-panel">
-                    <span class="eyebrow">Original Design</span>
+                <article class="product-card">
+                    <span class="eyebrow">
+                        Original Design
+                    </span>
 
                     <h3>Featured Shirt One</h3>
 
                     <p>
-                        Your first completed Huey Loop shirt and its
-                        purchasing link will be displayed here.
+                        Your first completed Huey Loop shirt and
+                        its purchasing link will be displayed here.
                     </p>
 
-                    <span class="status-label">Coming Soon</span>
+                    <span class="status-label">
+                        Coming Soon
+                    </span>
                 </article>
 
-                <article class="product-card metal-panel">
-                    <span class="eyebrow">Original Design</span>
+                <article class="product-card">
+                    <span class="eyebrow">
+                        Original Design
+                    </span>
 
                     <h3>Featured Shirt Two</h3>
 
                     <p>
-                        Your second completed Huey Loop shirt and its
-                        purchasing link will be displayed here.
+                        Your second completed Huey Loop shirt and
+                        its purchasing link will be displayed here.
                     </p>
 
-                    <span class="status-label">Coming Soon</span>
+                    <span class="status-label">
+                        Coming Soon
+                    </span>
                 </article>
 
             </div>
         </div>
     </section>
 
-    <section class="metal-section" id="inspiration">
+    <section
+        class="warm-section"
+        id="inspiration"
+    >
         <div class="container">
 
             <div class="inspiration-layout">
 
-                <div class="inspiration-copy metal-panel">
-                    <span class="eyebrow">Why Stories Matter</span>
+                <div class="inspiration-copy">
+                    <span class="eyebrow">
+                        Why Stories Matter
+                    </span>
 
                     <h2>
-                        We hope our work inspires you to preserve the
-                        stories of the people you love.
+                        We hope our work inspires you to preserve
+                        the stories of the people you love.
                     </h2>
 
                     <p>
                         Huey Loop documents the stories of our own
                         friends, family members, mentors, and loved
                         ones. We do not collect recordings or ask
-                        visitors to upload their personal stories to
-                        this website.
+                        visitors to upload their personal stories
+                        to this website.
                     </p>
 
                     <p>
-                        Instead, we hope the conversations shared here
-                        encourage others to sit down with the people
-                        they love, ask meaningful questions, and
-                        preserve those memories in whatever way feels
-                        right for their own family.
+                        Instead, we hope the conversations shared
+                        here encourage others to sit down with the
+                        people they love, ask meaningful questions,
+                        and preserve those memories in whatever way
+                        feels right for their own family.
                     </p>
 
                     <p>
@@ -1826,7 +1539,7 @@
                     </a>
                 </div>
 
-                <ul class="inspiration-list metal-panel">
+                <ul class="inspiration-list">
                     <li>
                         Call someone whose story matters to you
                     </li>
@@ -1856,7 +1569,7 @@
         </div>
     </section>
 
-    <section id="promise">
+    <section class="promise" id="promise">
         <div class="container">
 
             <div class="section-heading">
@@ -1867,7 +1580,7 @@
                 <h2>Our Promise</h2>
             </div>
 
-            <div class="promise-copy metal-panel">
+            <div class="promise-copy">
 
                 <p>
                     Huey Loop is a
@@ -1880,9 +1593,9 @@
 
                 <p>
                     While our family’s journey has been deeply
-                    influenced by military service, Huey Loop exists
-                    to share the stories of people from every walk
-                    of life.
+                    influenced by military service, Huey Loop
+                    exists to share the stories of people from
+                    every walk of life.
                 </p>
 
                 <p>
@@ -1907,12 +1620,12 @@
         </div>
     </section>
 
-    <section class="metal-section" id="contact">
+    <section class="dark-section" id="contact">
         <div class="container">
 
             <div class="contact-panel">
 
-                <div class="contact-message metal-panel">
+                <div class="contact-message">
                     <span class="eyebrow">
                         Connect With Huey Loop
                     </span>
@@ -1923,20 +1636,20 @@
                     </h2>
 
                     <p>
-                        Reach out with general questions, podcast or
-                        apparel inquiries, partnership ideas, or to
-                        tell us how Huey Loop inspired you to have a
-                        meaningful conversation with someone you
-                        love.
+                        Reach out with general questions, podcast
+                        or apparel inquiries, partnership ideas,
+                        or to tell us how Huey Loop inspired you
+                        to have a meaningful conversation with
+                        someone you love.
                     </p>
                 </div>
 
-                <div class="contact-details metal-panel">
+                <div class="contact-details">
                     <h3>Contact</h3>
 
                     <p>
-                        A dedicated Huey Loop email address will be
-                        added here once it is established.
+                        A dedicated Huey Loop email address will
+                        be added here once it is established.
                     </p>
 
                     <a
@@ -1963,7 +1676,7 @@
 
     <img
         class="footer-logo"
-        src="hueyloop-logo.png"
+        src="hueyloop-logo-new.png"
         alt="Huey Loop logo"
     >
 
@@ -1984,13 +1697,21 @@
 </footer>
 
 <script>
-    const menuButton = document.getElementById("menuButton");
-    const navigation = document.getElementById("mainNavigation");
-    const navigationLinks = navigation.querySelectorAll("a");
+    const menuButton =
+        document.getElementById("menuButton");
+
+    const navigation =
+        document.getElementById("mainNavigation");
+
+    const navigationLinks =
+        navigation.querySelectorAll("a");
 
     function closeMenu() {
         navigation.classList.remove("open");
-        document.body.classList.remove("menu-open");
+
+        document.body.classList.remove(
+            "menu-open"
+        );
 
         menuButton.setAttribute(
             "aria-expanded",
@@ -2003,36 +1724,46 @@
         );
     }
 
-    menuButton.addEventListener("click", function () {
-        const menuIsOpen = navigation.classList.toggle("open");
+    menuButton.addEventListener(
+        "click",
+        function () {
+            const menuIsOpen =
+                navigation.classList.toggle("open");
 
-        document.body.classList.toggle(
-            "menu-open",
-            menuIsOpen
-        );
+            document.body.classList.toggle(
+                "menu-open",
+                menuIsOpen
+            );
 
-        menuButton.setAttribute(
-            "aria-expanded",
-            String(menuIsOpen)
-        );
+            menuButton.setAttribute(
+                "aria-expanded",
+                String(menuIsOpen)
+            );
 
-        menuButton.setAttribute(
-            "aria-label",
-            menuIsOpen
-                ? "Close navigation menu"
-                : "Open navigation menu"
-        );
-    });
+            menuButton.setAttribute(
+                "aria-label",
+                menuIsOpen
+                    ? "Close navigation menu"
+                    : "Open navigation menu"
+            );
+        }
+    );
 
     navigationLinks.forEach(function (link) {
-        link.addEventListener("click", closeMenu);
+        link.addEventListener(
+            "click",
+            closeMenu
+        );
     });
 
-    window.addEventListener("resize", function () {
-        if (window.innerWidth > 800) {
-            closeMenu();
+    window.addEventListener(
+        "resize",
+        function () {
+            if (window.innerWidth > 800) {
+                closeMenu();
+            }
         }
-    });
+    );
 </script>
 
 </body>
